@@ -4,7 +4,7 @@
 	id="com.tkj.photoshare"
 	version="0.1.0">
 	<name>Photo Share</name>
-	<description>Share photo albums with friend and famly</description>
+	<description>Share photo albums with family and friends</description>
 	<author href="http://joemeeks.net" email="joemeeks@joemeeks.net">Joe Meeks</author>
     
     <icon src="img/icons/icon57.png" width="57" height="57"  gap:platform="ios" />

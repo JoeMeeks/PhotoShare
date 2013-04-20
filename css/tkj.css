@@ -24,5 +24,42 @@ li div { font-weight:normal }
 .panel li a:link, .panel ul li a:visited { text-decoration:none; }
 .panel li a:hover, .panel ul li a:active { text-decoration:underline; }
 
+/* scrollview */
+div[data-role=scrollview] { height:100%; }
+.photo { padding:10px; text-align:center; vertical-align:middle }
+.photo img { width:auto; max-width:100%; height:auto; max-height:100%; vertical-align:middle }
+
 /* kendo font icons */
 .km-button.list .km-custom:after { content:'' }
+
+/* orientation overrides */
+/* Portrait */
+@media screen and (orientation:portrait) {
+    .km-root .km-list .filePicker input[type=file]:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="image"]):not([type="checkbox"]):not([type="radio"]):not(.k-input):not(.k-button) {
+        margin:0; padding:0 }
+}
+/* Landscape */
+@media screen and (orientation:landscape) {
+    .km-root .km-list input[type=file]:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="image"]):not([type="checkbox"]):not([type="radio"]):not(.k-input):not(.k-button) {
+        margin:0; padding:0 }
+}
+/* Desktop */
+@media screen and (min-width:800px) {
+    .km-root .km-list .attachments input[type="file"]:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="image"]):not([type="checkbox"]):not([type="radio"]):not(.k-input):not(.k-button) {
+        max-width:300px; top:6px }
+}
+
+/* retina */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+    
+}
+
+/*-- iPhone 4, 4S Retina -----------------------*/
+@media screen and (-webkit-min-pixel-ratio:2) and (min-width:320px) and (max-width:600px) {
+   
+}
+
+/*------- iPhone 2G, 3G, 3GS  -------------*/
+@media screen and (min-width: 320px) and (max-width: 600px){
+    
+}

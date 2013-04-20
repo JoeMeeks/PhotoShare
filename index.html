@@ -28,25 +28,21 @@
                 </div>
             </footer>
         </div>
-        <div id="albums" data-role="view" data-layout="master" data-title="Upload Media">
-            <h1>View Albums</h1>
-            <div id="scrollview-container">
-                <div data-role="scrollview" data-page="0">
-                    <div class="photo photo1" data-role="page"><img src="img/Monkey1.png" />
-                    </div><div class="photo photo2" data-role="page"><img src="img/Monkey2.png" />
-                    </div><div class="photo photo3" data-role="page"><img src="img/Panda.png" />
-                    </div>
+        <div id="albums" data-role="view" data-layout="master" data-title="View Albums">
+            <div data-role="scrollview" data-page="0">
+                <div class="photo photo1" data-role="page"><img src="img/Monkey1.png" />
+                </div><div class="photo photo2" data-role="page"><img src="img/Monkey2.png" />
+                </div><div class="photo photo3" data-role="page"><img src="img/Panda.png" />
                 </div>
             </div>
         </div>
         <div id="upload" data-role="view" data-layout="master" data-title="Upload Media">
-            <h1>Upload Media</h1>
             <p>Take a photo or video with your device camera or select media from your albums.</p>
             <ul data-role="listview" data-style="inset">
                 <li>
                     <label>
                         Select
-                        <input id="fiMedia" type="file" accept="image/*, video/*;capure=camera" multiple onchange="tkj.ui.mediaUpload(this)" />
+                        <input id="fiMedia" type="file" accept="image/*, video/*" capure="camera" multiple onchange="tkj.ui.mediaUpload(this)" />
                     </label>
                 </li>
                 <li>
