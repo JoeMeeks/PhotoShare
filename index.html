@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>iOS Media Uploader</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="shortcut icon" type="image/png" href="images/icons/ios/icon.png" />
+        <link rel="apple-touch-icon" href="images/icons/ios/icon.png" />
+        <script src="cordova.js"></script>
+        <link href="css/kendo.mobile.all.min.css" rel="stylesheet" />
+        <link href="css/tkj.css" rel="stylesheet" type="text/css" />
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/animate.js" type="text/javascript"></script> <!-- request animation frame smoothness -->
+        <script src="js/kendo.mobile.min.js" type="text/javascript"></script>
+        <script src="js/tkj.js" type="text/javascript"></script>
+    </head>
+    <body id="body" onload="onBodyLoad()">
+        <div data-role="layout" data-id="master" data-init="tkj.ui.master_Init" data-show="tkj.ui.master_Show">
+            <header data-role="header">
+                <div data-role="navbar">
+                    <span data-role="view-title" data-align="center"></span>
+                </div>
+            </header>
+            <footer data-role="footer">
+                <div data-role="tabstrip" data-align="center">
+                    <a data-icon="organize" href="#albums">Albums</a>
+                    <a data-icon="camera" href="#upload">Media</a>
+                </div>
+            </footer>
+        </div>
+        <div id="albums" data-role="view" data-layout="master" data-title="Upload Media">
+            <h1>View Albums</h1>
+            <div id="scrollview-container">
+                <div data-role="scrollview" data-page="0">
+                    <div class="photo photo1" data-role="page"><img src="img/Monkey1.png" />
+                    </div><div class="photo photo2" data-role="page"><img src="img/Monkey2.png" />
+                    </div><div class="photo photo3" data-role="page"><img src="img/Panda.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="upload" data-role="view" data-layout="master" data-title="Upload Media">
+            <h1>Upload Media</h1>
+            <p>Take a photo or video with your device camera or select media from your albums.</p>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>
+                        Select
+                        <input id="fiMedia" type="file" accept="image/*, video/*;capure=camera" multiple onchange="tkj.ui.mediaUpload(this)" />
+                    </label>
+                </li>
+                <li>
+                    <progress min="0" max="100" value="0">0%</progress>
+                    <button id="btnClear" style="display:none" onclick="tkj.ui.clearUpload()">Clear</button>
+                </li>
+            </ul>
+        </div>
+
+        <script>
+            var app = new kendo.mobile.Application(document.body, { transition: "slide" });
+            $("#body").css("visibility", "visible");
+            function onBodyLoad() {
+                //attach device ready
+            }
+        </script>
+    </body>
+</html>

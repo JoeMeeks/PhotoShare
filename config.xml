@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+	xmlns:gap="http://phonegap.com/ns/1.0"
+	id="com.tkj.photoshare"
+	version="0.1.0">
+	<name>Photo Share</name>
+	<description>Share photo albums with friend and famly</description>
+	<author href="http://joemeeks.net" email="joemeeks@joemeeks.net">Joe Meeks</author>
+    
+    <icon src="img/icons/photo57.png" width="57" height="57"  gap:platform="ios" />
+    <icon src="img/icons/photo72.png" width="72" height="72" gap:platform="ios" gap:role="default" />
+    <icon src="img/icons/photo96.png" width="96" height="96" gap:platform="ios" />
+    photo
+
+    <feature name="http://api.phonegap.com/1.0/device" />
+
+    <preference name="phonegap-version" value="2.5.0" />
+    <preference name="orientation" value="portrait" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="prerendered-icon" value="false" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="true" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="stay-in-webview" value="false" />
+</widget>

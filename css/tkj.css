@@ -1,0 +1,28 @@
+﻿/* Photo Share styles by Joe Meeks (aka TaeKwonJoe) */
+/* http://github.com/JoeMeeks */
+body { font-family:HelveticaNeue, Arial, Verdana, sans-serif; visibility:hidden } /* hide body to prevent FOUC */
+#body .km-view { z-index:1; background:#FFF } /* set z-index to overlap menu */
+p { font-weight:normal }
+li div { font-weight:normal }
+
+/* menu */
+#body .menu { display:none; position:absolute; top:0; left:0; z-index:0; width:250px; height:100%; color:#FFF; background:#333 }
+#body .menu .km-listview-link { line-height:24px }
+#body .menu .km-list > li.km-state-active .km-listview-link, #body .menu .km-list > li.active .km-listview-link { background-color:#1A2133 }
+#body li a.km-listview-link.active { background-color:#1A2133 }
+#body .menu .km-group-title { background-color:#3d4554; border-top-color:#3d4554; text-shadow:0 1px 1px #362630 }
+#body .menu .km-list > li { font-size:1em }
+#body .menu .km-list > li { background:#30384a;  }
+#body .menu .km-list > li a, .menu .km-list > li a span.km-icon { color:#b4bac6 }
+#body .menu .version { padding:10px; color:#797d8e; font-size:0.8em; font-weight:normal; text-align:center }
+
+.km-button.active { background-color:#264e8c }
+
+.panel { margin:1em; padding: 10px 20px; background:#FFF; border-bottom: 1px solid rgba(255, 255, 255, 0.05); border-width: 0 0 1px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); 
+    font-weight:normal; line-height:18px }
+.panel li a { color:#264e8c }
+.panel li a:link, .panel ul li a:visited { text-decoration:none; }
+.panel li a:hover, .panel ul li a:active { text-decoration:underline; }
+
+/* kendo font icons */
+.km-button.list .km-custom:after { content:'' }
