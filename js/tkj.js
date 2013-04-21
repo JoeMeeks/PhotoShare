@@ -75,15 +75,24 @@
                     app.hideLoading();
                 }
             });
+            var images;
+            $.each(input.files, function (n, i) {
+                $("li.thumbs").show();
+                //images += '<img src="' + i.fileName + '" width="32" height="32" />';
+                images += '<img src="' + i.fileName + '" width="32" height="32" />';
+                //console.log(i);
+            });
+            $("li.thumbs").append(images);
         },
         clearUpload: function() {
             var progressBar = document.querySelector("progress");
             progressBar.value = 0;
             progressBar.textContent = "0%";
             $("#fiMedia").val("");
+            $("li.thumbs").hide();
             $("#btnClear").hide();
         }
-    }
+    };
     tkj.api = {
         
     }
