@@ -33,6 +33,9 @@
         master_Show: function (e) {
             $(document.body).css("visibility", "visible"); //reveal body after active view is shown
         },
+        login: function () {
+
+        },
         mediaUpload: function(input) {
             $("#btnClear").show();
             var options = { repo: "temp" };
@@ -80,5 +83,8 @@
             $("#fiMedia").val("");
             $("#btnClear").hide();
         }
+    }
+    tkj.api = {
+        
     }
 } (window.tkj = window.tkj || {}, jQuery));

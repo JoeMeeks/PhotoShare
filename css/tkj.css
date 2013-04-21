@@ -26,7 +26,8 @@ li div { font-weight:normal }
 
 /* scrollview */
 .scrollViewPanel { height:100%; }
-.photo { background:#000; text-align:center; vertical-align:middle }
+/*div[data-role=scrollview] { height:90% }*/
+.photo { height:100%; background:#000; text-align:center; vertical-align:middle }
 .photo img { width:auto; max-width:100%; height:auto; max-height:100%; vertical-align:middle }
 
 /* kendo font icons */
