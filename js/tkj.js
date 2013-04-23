@@ -22,19 +22,85 @@
             group: "section",
             sort: "order"
         }),
+        photos: new kendo.data.DataSource({
+            transport: {
+                read: function(options) {
+                    tkj.api.get("image", null, function (result) { options.success(result); }, function (result) { options.error(result); }); 
+                }
+            }
+        }),
         iconclass: function (e) { return "km-icon km-" + e.icon; },
         active: null,
-        version: 'Kendo Mobile Slide Menu by <a href="http://github.com/JoeMeeks" target="_blank">Joe Meeks</a>'
+        version: 'Photo Share by <a href="http://github.com/JoeMeeks" target="_blank">Joe Meeks</a>'
     });
+    tkj.api = {
+        baseUrl: " http://photoshare9999.appspot.com/",
+        get: function (route, data, fnSuccess, fnError) {
+            try {
+                $.ajax({
+                    //headers: { Accept: "text/json" },
+                    url: tkj.api.baseUrl + route,
+                    //contentType: "application/json; charset=utf-8",
+                    type: "get",
+                    data: data,
+                    dataType: "jsonp",
+                    beforeSend: function (e) {
+                        app.showLoading();
+                    },
+                    success: function (e) {
+                        console.log(e);
+                        fnSuccess(e);
+                    },
+                    error: function (e) {
+                        console.log(e);
+                        if (fnError) {
+                            fnError(e);
+                        } else fbg.ui.showError(JSON.stringify(e));
+                    },
+                    complete: function () {
+                        app.hideLoading();
+                    }
+                });
+            } catch (e) {
+                fbg.ui.showError("ajax error: " + e.message);
+            }
+        },
+    };
     tkj.ui = {
         master_Init: function (e) {
             //the layout init event only fires once on browser load or refresh
         },
         master_Show: function (e) {
             $(document.body).css("visibility", "visible"); //reveal body after active view is shown
+            
         },
         login: function () {
+            var client_id="dev.photoshare.com";
+            var state="authenticated";
+            var scope="http://photoshare9999.appspot.com/";
+            var url = "https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=" + client_id + "&state=" + state + "&redirect_uri=http://localhost&scope=" + scope;
+            var ref = window.open(url, "_blank", "location=yes");
+            ref.addEventListener("exit", function () {
+                alert(event.type); 
+                ref.removeEventListener("exit");
+            });
 
+            function oAuth2Failed() {
+              console.log('oAuth2Failed');
+              document.getElementById('info').innerHTML='login failed';
+              ref.close();
+            }
+
+            function oAuth2Success(token) {
+              console.log("I can haz code: "+token);
+              document.getElementById('info').innerHTML=token;
+              ref.close();
+            }
+
+
+        },
+        onPhotosShow: function (e) {
+            
         },
         mediaUpload: function(input) {
             $("#btnClear").show();
@@ -55,7 +121,7 @@
             data.append("options", JSON.stringify(options));
             for (var i = 0; i < input.files.length; i++) data.append(input.files[i].name, input.files[i]);
             $.ajax({
-                url: "http://joemeeks.net/Upload.ashx",
+                url: "https://photoshare9999.appspot.com/_ah/upload/?bloburl=true",
                 type: 'POST',
                 xhr: provider,
                 data: data,
@@ -93,7 +159,4 @@
             $("#btnClear").hide();
         }
     };
-    tkj.api = {
-        
-    }
 } (window.tkj = window.tkj || {}, jQuery));

@@ -24,6 +24,11 @@ li div { font-weight:normal }
 .panel li a:link, .panel ul li a:visited { text-decoration:none; }
 .panel li a:hover, .panel ul li a:active { text-decoration:underline; }
 
+/* photos */
+.photos { min-height:150px; overflow-x:scroll; white-space:nowrap }
+#body .photos .km-list > li { display:inline-block; width:145px; height:65px; margin-left:10px; padding:0; background-color:transparent }
+#body .photos .km-list > li:last-child { margin-right:10px; }
+
 /* scrollview */
 .scrollViewPanel { height:100%; }
 /*div[data-role=scrollview] { height:90% }*/

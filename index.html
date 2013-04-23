@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
-        <title>iOS Media Uploader</title>
+        <title>Photo Share</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="shortcut icon" type="image/png" href="images/icons/icon57.png" />
@@ -23,15 +23,31 @@
             </header>
             <footer data-role="footer">
                 <div data-role="tabstrip" data-align="center">
-                    <a data-icon="organize" href="#albums">Albums</a>
+                    <a data-icon="organize" href="#photos">Photos</a>
                     <a data-icon="camera" href="#upload">Media</a>
                 </div>
             </footer>
         </div>
+        <div id="login" data-role="view" data-layout="master" data-model="tkj.vm" data-title="Photo Share Login">
+            <div style="padding:50px 20px; text-align:center">
+                <button onclick="tkj.ui.login()">login</button>
+            </div>
+            <footer data-role="footer"></footer>
+        </div>
+        <div id="photos" data-role="view" data-layout="master" data-model="tkj.vm" data-title="User Photos">
+            <div data-role="scroller" class="photos">
+                <ul data-role="listview" data-bind="source: photos" data-template="photoTemplate" data-auto-bind="true" data-click="tkj.ui.onPhotoClick"></ul>
+                <script id="photoTemplate" type="text/x-kendo-template">
+                Hai
+                    <img src="http://photoshare9999.appspot.com/image?blobkey=#:blobkey#" />
+                </script>
+            </div>
+        </div>
         <div id="albums" data-role="view" data-layout="master" data-title="View Albums">
             <div class="scrollViewPanel">
                 <div data-role="scrollview" data-page="0">
-                    <div class="photo" data-role="page"><img src="img/Monkey1.png" /></div><div class="photo" data-role="page"><img src="img/Monkey2.png" /></div><div class="photo" data-role="page"><img src="img/Panda.png" /></div>
+                    <!--<div class="photo" data-role="page"><img src="img/Monkey1.png" /></div><div class="photo" data-role="page"><img src="img/Monkey2.png" /></div><div class="photo" data-role="page"><img src="img/Panda.png" /></div>-->
+                    <div class="photo"><img src="http://photoshare9999.appspot.com/image?blobkey=AMIfv95bik6zNtAziUn9ZimEdL43tK75EnfB-wlR6zoLRENdeVENLTR41QgSDwtFkmw2mjVkjoseeARr2GDlcu8YzyxBWhFFnuGxWWsqao2vKIcIERFgqyjmSn06JUu5T4RbBVWEh9HCEeYWzFgJPUoo5byrgdBvWVL5Hf0UCR-hrcx1BQYbwZs" /></div>
                 </div>
             </div>
         </div>
