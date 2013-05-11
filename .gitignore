@@ -75,6 +75,9 @@ DocProject/Help/html
 # Click-Once directory
 publish
 
+# IIS Web Config
+Web.config
+
 # Publish Web Output
 *.Publish.xml
 
